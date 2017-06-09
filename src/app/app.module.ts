@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AboutComponent} from './about/about.component';
+import {AboutUserComponent} from './about/about-user/about-user.component';
 import {appRouting} from './app.routing';
 import {ContactComponent} from './contact/contact.component';
 import {HomeComponent} from './home/home.component';
@@ -13,6 +14,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
   declarations: [
     AppComponent,
     AboutComponent,
+    AboutUserComponent,
     ContactComponent,
     HomeComponent,
     NotFoundComponent

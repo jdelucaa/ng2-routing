@@ -1,7 +1,8 @@
 /**
  * Created by joana on 08/06/2017.
  */
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 export class User {
   id: number;
@@ -32,11 +33,23 @@ const users: User[] = [
 ];
 
 @Component({
-  selector: 'about-page',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  templateUrl: 'about-user.component.html',
+  styleUrls: ['about-user.component.css']
 })
-export class AboutComponent {
-  users: User[] = users;
+
+export class AboutUserComponent implements OnInit {
+  user;
+
+  constructor(private route: ActivatedRoute) {
+
+  }
+
+  ngOnInit() {
+    // grab the current username
+    const username = this.route.snapshot.params['username'];
+
+    this.user = users.find(user => user.username === username);
+    console.log(username);
+  }
 
 }
