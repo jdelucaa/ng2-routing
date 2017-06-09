@@ -1,6 +1,14 @@
-# Ng2Routing
+# Routing Angular 2 Applications
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+This project contains all Angular 2 routing cool features examples:
+
+* Route to different pages
+* Route with parameters
+* Child routes
+* Lazy loading
+* Handle things (auth) before/after routes
+
+This was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
 
 ## Development server
 
