@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 
 import {AboutComponent} from './about.component';
+import {AboutSectionComponent} from './about-section.component';
 import {aboutRouting} from './about.routing';
 import {AboutUserComponent} from './about-user/about-user.component';
 import {UserService} from '../shared/services/user.service';
@@ -16,6 +17,7 @@ import {UserService} from '../shared/services/user.service';
   ],
   declarations: [
     AboutComponent,
+    AboutSectionComponent,
     AboutUserComponent
   ],
   providers: [
