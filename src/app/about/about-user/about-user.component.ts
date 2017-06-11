@@ -4,33 +4,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-export class User {
-  id: number;
-  name: string;
-  username: string;
-  avatar: string;
-}
-
-const users: User[] = [
-  {
-    id: 1,
-    name: 'Chris',
-    username: 'chrisoncode',
-    avatar: 'https://pbs.twimg.com/profile_images/850147482117865472/O28qQSrN.jpg'
-  },
-  {
-    id: 2,
-    name: 'Nick',
-    username: 'whatnicktweets',
-    avatar: 'https://pbs.twimg.com/profile_images/502500686588690432/wXBzuCBj.jpeg'
-  },
-  {
-    id: 3,
-    name: 'Holly',
-    username: 'hollylawly',
-    avatar: 'https://pbs.twimg.com/profile_images/721918869821005824/2qT_RY5M.jpg'
-  }
-];
+import {User} from '../../shared/models/user';
+import {UserService} from '../../shared/services/user.service';
 
 @Component({
   templateUrl: 'about-user.component.html',
@@ -38,9 +13,9 @@ const users: User[] = [
 })
 
 export class AboutUserComponent implements OnInit {
-  user;
+  user: User;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private userService: UserService) {
 
   }
 
@@ -48,8 +23,6 @@ export class AboutUserComponent implements OnInit {
     // grab the current username
     const username = this.route.snapshot.params['username'];
 
-    this.user = users.find(user => user.username === username);
-    console.log(username);
+    this.userService.getUser(username).then(user => this.user = user);
   }
-
 }

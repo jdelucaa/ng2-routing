@@ -9,6 +9,7 @@ import {appRouting} from './app.routing';
 import {ContactComponent} from './contact/contact.component';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {UserService} from './shared/services/user.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import {NotFoundComponent} from './not-found/not-found.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
