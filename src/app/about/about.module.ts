@@ -8,6 +8,7 @@ import {AboutComponent} from './about.component';
 import {AboutSectionComponent} from './about-section.component';
 import {aboutRouting} from './about.routing';
 import {AboutUserComponent} from './about-user/about-user.component';
+import {AboutUserResolve} from './about-user-resolve.service';
 import {AboutUsersResolve} from './about-resolve.service';
 import {UserService} from '../shared/services/user.service';
 
@@ -22,6 +23,7 @@ import {UserService} from '../shared/services/user.service';
     AboutUserComponent
   ],
   providers: [
+    AboutUserResolve,
     AboutUsersResolve,
     UserService
   ]

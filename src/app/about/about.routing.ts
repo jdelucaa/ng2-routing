@@ -5,6 +5,7 @@ import {AboutComponent} from './about.component';
 import {AboutSectionComponent} from './about-section.component';
 import {AboutUserComponent} from './about-user/about-user.component';
 import {AboutUsersResolve} from './about-resolve.service';
+import {AboutUserResolve} from './about-user-resolve.service';
 
 const aboutRoutes: Routes = [
   {
@@ -21,7 +22,10 @@ const aboutRoutes: Routes = [
       },
       {
         path: ':username',
-        component: AboutUserComponent
+        component: AboutUserComponent,
+        resolve: {
+          user: AboutUserResolve
+        }
       }
     ]
   }
