@@ -20,6 +20,12 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
+    // for lazy loading
+    path: 'about',
+    loadChildren: 'app/about/about.module#AboutModule' // so angular doesn't know how to load it, it only knows it when
+                                                      // this loadChildren and this path gets hit
+  },
+  {
     path: 'contact',
     component: ContactComponent
   },
