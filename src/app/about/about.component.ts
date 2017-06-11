@@ -1,10 +1,10 @@
 /**
  * Created by joana on 08/06/2017.
  */
+import {ActivatedRoute} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 
 import {User} from '../shared/models/user';
-import {UserService} from '../shared/services/user.service';
 
 @Component({
   selector: 'about-page',
@@ -14,11 +14,10 @@ import {UserService} from '../shared/services/user.service';
 export class AboutComponent implements OnInit {
   users: User[];
 
-  constructor(private userService: UserService) {
-
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.userService.getUsers().then(users => this.users = users);
+    this.route.data.subscribe((data: { users: User[] }) => this.users = data.users);
   }
 }

@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from './about.component';
 import {AboutSectionComponent} from './about-section.component';
 import {AboutUserComponent} from './about-user/about-user.component';
+import {AboutUsersResolve} from './about-resolve.service';
 
 const aboutRoutes: Routes = [
   {
@@ -13,7 +14,10 @@ const aboutRoutes: Routes = [
       {
         // will match about route
         path: '',
-        component: AboutComponent
+        component: AboutComponent,
+        resolve: {
+          users: AboutUsersResolve
+        }
       },
       {
         path: ':username',
