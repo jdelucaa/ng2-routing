@@ -8,7 +8,7 @@ This project contains all Angular 2 routing cool features examples:
 * Lazy loading
 * Handle things (auth) before/after routes
 
-This was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1. Commits are separated according to each subject about routing, you can check them to get details about each subject, track by commit messages.
+This was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1. Commits are separated according to each subject about routing, you can check them to get details about each subject, just track by commit messages.
 
 ## Development server
 
